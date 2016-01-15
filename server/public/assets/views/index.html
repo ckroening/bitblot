@@ -1,67 +1,42 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html ng-app="bitblot">
 <head>
     <title>BitBlot!!</title>
     <link rel="stylesheet" href="/assets/styles/style.css">
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 </head>
 
-<body>
-<form name="myForm" ng-controller="UserController">
-    <div ng-app="carousel">
-        <div class="container" ng-controller="folderCtrl">
-            <!-- Carousel
-                ================================================== -->
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" ng-repeat="img in images" class="{active : (img === 0)}" data-slide-to="{{img}}"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div ng-class="{item: true, active : (img === 0)}" ng-repeat="img in images"> <img ng-src="{{uri}}/{{w}}/{{h}}/{{currentFolder}}/{{img}}" alt="Slide number {{img}}">
-                        <div class="container">
-                            <div class="carousel-caption"> </div>
-                        </div>
-                    </div>
-                </div>
-                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a> </div>
-            <!-- /.carousel -->
-            <!-- Fixed navbar -->
-            <div class="navbar navbar-default navbar-fixed-botom" role="navigation">
-                <div class="container">
-                    <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
-                            <li ng-repeat="folder in folders" class="{{activeFolder(folder)}}" ng-click="selectFolder(folder)"> <a ng-href="#{{folder}}">{{folder}}</a> </li>
-                        </ul>
-                    </div>
-                    <!--/.nav-collapse -->
-                </div>
-            </div>
-        </div>
-    </div>
+<body ng-controller="BitBlotCtrl">
+<!--TODO: ng-show login view, results view -->
+<!--TODO: Make a GetResults Button! -->
+
+<div>
+    <p><button ng-click="prev()" ng-disabled="currentImageNum === 0">Previous</button></p>
+    <p><img ng-src="{{currentImage.src}}"></p>
+    <p><button ng-click="next()" ng-disabled="currentImageNum >= images.length - 1">Next</button></p>
     <label>
-        Amount that you "Liked" the image. <br />
-        <input type="radio" ng-model="emotion.level" value="1">
-        <input type="radio" ng-model="emotion.level" value="2">
-        <input type="radio" ng-model="emotion.level" value="3">
-        <input type="radio" ng-model="emotion.level" value="4">
-        <input type="radio" ng-model="emotion.level" value="5">
+        Amount that you "Liked" the image. <br/>
+        <input type="radio" name="likeness" ng-model="currentImage.likeAmount" value="1">1
+        <input type="radio" name="likeness" ng-model="currentImage.likeAmount" value="2">2
+        <input type="radio" name="likeness" ng-model="currentImage.likeAmount" value="3">3
+        <input type="radio" name="likeness" ng-model="currentImage.likeAmount" value="4">4
+        <input type="radio" name="likeness" ng-model="currentImage.likeAmount" value="5">5
     </label><br/>
     <label>
         Level of "Happiness" that the image produced. <br />
-        <input type="radio" ng-model="emotion.level" value="1">
-        <input type="radio" ng-model="emotion.level" value="2">
-        <input type="radio" ng-model="emotion.level" value="3">
-        <input type="radio" ng-model="emotion.level" value="4">
-        <input type="radio" ng-model="emotion.level" value="5">
+        <input type="radio" name="happiness" ng-model="currentImage.happinessAmount" value="1">1
+        <input type="radio" name="happiness" ng-model="currentImage.happinessAmount" value="2">2
+        <input type="radio" name="happiness" ng-model="currentImage.happinessAmount" value="3">3
+        <input type="radio" name="happiness" ng-model="currentImage.happinessAmount" value="4">4
+        <input type="radio" name="happiness" ng-model="currentImage.happinessAmount" value="5">5
     </label><br/>
     <label>
         Level of "Sadness" that the image produced. <br />
-        <input type="radio" ng-model="emotion.level" value="1">
-        <input type="radio" ng-model="emotion.level" value="2">
-        <input type="radio" ng-model="emotion.level" value="3">
-        <input type="radio" ng-model="emotion.level" value="4">
-        <input type="radio" ng-model="emotion.level" value="5">
+        <input type="radio" name="sadness" ng-model="emotion.level" value="1">
+        <input type="radio" name="sadness" ng-model="emotion.level" value="2">
+        <input type="radio" name="sadness" ng-model="emotion.level" value="3">
+        <input type="radio" name="sadness" ng-model="emotion.level" value="4">
+        <input type="radio" name="sadness" ng-model="emotion.level" value="5">
     </label><br/>
     <label>
         Level of "Disgust" that the image produced. <br />
@@ -103,14 +78,14 @@
         <input type="radio" ng-model="emotion.level" value="4">
         <input type="radio" ng-model="emotion.level" value="5">
     </label><br/>
-</form>
-<button type="submit" href="results.html">Submit Responses!</button>
+    <button type="submit">Submit Responses!</button>
+</div>
 
 <script src="/vendors/angular/angular.min.js" type="text/javascript"></script>
-<script src="/assets/scripts/app.min.js" type="text/javascript"></script>
+<script src="/assets/scripts/app.js" type="text/javascript"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>3
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>-->
 
 </body>
 </html>
