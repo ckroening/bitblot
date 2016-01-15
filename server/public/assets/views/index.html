@@ -10,7 +10,9 @@
 <!--TODO: ng-show login view, results view -->
 <!--TODO: Make a GetResults Button! -->
 
-<div>
+<!-- div for login view -->
+
+<div //ng-show="true">
     <p><button ng-click="prev()" ng-disabled="currentImageNum === 0">Previous</button></p>
     <p><img ng-src="{{currentImage.src}}"></p>
     <p><button ng-click="next()" ng-disabled="currentImageNum >= images.length - 1">Next</button></p>
@@ -80,6 +82,8 @@
     </label><br/>
     <button type="submit">Submit Responses!</button>
 </div>
+
+<!--div for results page -->
 
 <script src="/vendors/angular/angular.min.js" type="text/javascript"></script>
 <script src="/assets/scripts/app.js" type="text/javascript"></script>
