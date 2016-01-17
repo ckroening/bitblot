@@ -1,3 +1,12 @@
-form {
-    margin: 10% 20% 10% 20%;
+main, .login {
+    margin: 10% 30% 10% 20%;
+    text-align: center;
+}
+section {
+    width: 600px;
+    margin: 10% 30% 10% 20%;
+    text-align: center;
+}
+.results2, .results2 {
+    margin: 10% auto auto auto;
 }

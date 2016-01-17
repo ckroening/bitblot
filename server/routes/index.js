@@ -25,7 +25,7 @@ router.get('/imageData', function(req, res) {
 router.put('/imageData/:id', function(req, res) {
   var id = req.params.id;
   res.send('Sent data for image ' + id + ' to database.');
-  console.log('sending one image data to db: ' + id);
+  console.log('sending data for image ' + id + ' to db.');
   console.log(req.body);
 });
 
@@ -35,10 +35,5 @@ router.get('/results', function(req, res) { //this handler is looking through AL
     name: 'bob'
   });
 });
-
-// additional routes needed:
-// GET residual image info  (description, responses)
-// PUT new image info
-// GET results (average calculated) for all users
 
 module.exports = router; //export order: tells router to exist as a module for use throughout rest of app.
