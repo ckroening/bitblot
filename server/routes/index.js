@@ -13,13 +13,13 @@ router.get('/',function(req,res,next){ //next is how express handles middleware.
 
 router.post('/login', function(req, res) {
   console.log('logged in');
-  res.send('this works.')// FIXME: implement
+  res.send('this works.'); // FIXME: implement
   //think of as connecting to a login "file" which will later be contained in DB.
 });
 
 router.get('/imageData', function(req, res) {
   console.log('got all image data');
-  res.sendFile(path.join(__dirname,'../routes/images.json'))
+  res.sendFile(path.join(__dirname,'../routes/images.json'));//'../data.json'
 });
 
 router.put('/imageData/:id', function(req, res) {

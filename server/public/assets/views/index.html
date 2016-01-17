@@ -12,7 +12,7 @@
 
 <!-- div for login view -->
 
-<div //ng-show="true">
+<main/*ng-show="true"*/>
     <p><button ng-click="prev()" ng-disabled="currentImageNum === 0">Previous</button></p>
     <p><img ng-src="{{currentImage.src}}"></p>
     <p><button ng-click="next()" ng-disabled="currentImageNum >= images.length - 1">Next</button></p>
@@ -42,46 +42,46 @@
     </label><br/>
     <label>
         Level of "Disgust" that the image produced. <br />
-        <input type="radio" name="sadness" ng-model="currentImage.disgustAmount" value="1">
-        <input type="radio" name="sadness" ng-model="currentImage.disgustAmount" value="2">
-        <input type="radio" name="sadness" ng-model="currentImage.disgustAmount" value="3">
-        <input type="radio" name="sadness" ng-model="currentImage.disgustAmount" value="4">
-        <input type="radio" name="sadness" ng-model="currentImage.disgustAmount" value="5">
+        <input type="radio" name="digust" ng-model="currentImage.disgustAmount" value="1">
+        <input type="radio" name="digust" ng-model="currentImage.disgustAmount" value="2">
+        <input type="radio" name="digust" ng-model="currentImage.disgustAmount" value="3">
+        <input type="radio" name="digust" ng-model="currentImage.disgustAmount" value="4">
+        <input type="radio" name="digust" ng-model="currentImage.disgustAmount" value="5">
     </label><br/>
     <label>
         Level of "Anxiety" that the image produced. <br />
-        <input type="radio" name="sadness" ng-model="currentImage.anxietyAmount" value=" 1 ">
-        <input type="radio" name="sadness" ng-model="currentImage.anxietyAmount" value="2">
-        <input type="radio" name="sadness" ng-model="currentImage.anxietyAmount" value="3">
-        <input type="radio" name="sadness" ng-model="currentImage.anxietyAmount" value="4">
-        <input type="radio" name="sadness" ng-model="currentImage.anxietyAmount" value="5">
+        <input type="radio" name="anxiety" ng-model="currentImage.anxietyAmount" value=" 1 ">
+        <input type="radio" name="anxiety" ng-model="currentImage.anxietyAmount" value="2">
+        <input type="radio" name="anxiety" ng-model="currentImage.anxietyAmount" value="3">
+        <input type="radio" name="anxiety" ng-model="currentImage.anxietyAmount" value="4">
+        <input type="radio" name="anxiety" ng-model="currentImage.anxietyAmount" value="5">
     </label><br/>
     <label>
         Level of "Calm" that the image produced. <br />
-        <input type="radio" name="sadness" ng-model="currentImage.calmAmount" value="1">
-        <input type="radio" name="sadness" ng-model="currentImage.calmAmount" value="2">
-        <input type="radio" name="sadness" ng-model="currentImage.calmAmount" value="3">
-        <input type="radio" name="sadness" ng-model="currentImage.calmAmount" value="4">
-        <input type="radio" name="sadness" ng-model="currentImage.calmAmount" value="5">
+        <input type="radio" name="calm" ng-model="currentImage.calmAmount" value="1">
+        <input type="radio" name="calm" ng-model="currentImage.calmAmount" value="2">
+        <input type="radio" name="calm" ng-model="currentImage.calmAmount" value="3">
+        <input type="radio" name="calm" ng-model="currentImage.calmAmount" value="4">
+        <input type="radio" name="calm" ng-model="currentImage.calmAmount" value="5">
     </label><br/>
     <label>
         Level of "Anger" that the image produced. <br />
-        <input type="radio" name="sadness" ng-model="currentImage.angerAmount" value="1">
-        <input type="radio" name="sadness" ng-model="currentImage.angerAmount" value="2">
-        <input type="radio" name="sadness" ng-model="currentImage.angerAmount" value="3">
-        <input type="radio" name="sadness" ng-model="currentImage.angerAmount" value="4">
-        <input type="radio" name="sadness" ng-model="currentImage.angerAmount" value="5">
+        <input type="radio" name="anger" ng-model="currentImage.angerAmount" value="1">
+        <input type="radio" name="anger" ng-model="currentImage.angerAmount" value="2">
+        <input type="radio" name="anger" ng-model="currentImage.angerAmount" value="3">
+        <input type="radio" name="anger" ng-model="currentImage.angerAmount" value="4">
+        <input type="radio" name="anger" ng-model="currentImage.angerAmount" value="5">
     </label><br/>
     <label>
         Level of "Curiosity" that the image produced. <br />
-        <input type="radio" name="sadness" ng-model="currentImage.curiosityAmount" value="1">
-        <input type="radio" name="sadness" ng-model="currentImage.curiosityAmount" value="2">
-        <input type="radio" name="sadness" ng-model="currentImage.curiosityAmount" value="3">
-        <input type="radio" name="sadness" ng-model="currentImage.curiosityAmount" value="4">
-        <input type="radio" name="sadness" ng-model="currentImage.curiosityAmount" value="5">
+        <input type="radio" name="curiosity" ng-model="currentImage.curiosityAmount" value="1">
+        <input type="radio" name="curiosity" ng-model="currentImage.curiosityAmount" value="2">
+        <input type="radio" name="curiosity" ng-model="currentImage.curiosityAmount" value="3">
+        <input type="radio" name="curiosity" ng-model="currentImage.curiosityAmount" value="4">
+        <input type="radio" name="curiosity" ng-model="currentImage.curiosityAmount" value="5">
     </label><br/>
     <button type="submit">Submit Responses!</button>
-</div>
+</main>
 
 <!--div for results page -->
 
