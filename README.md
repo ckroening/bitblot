@@ -172,4 +172,4 @@ Client Signature _____________________________________
 
 Client Name (printed) _________________________________
 
-If approval of this Scope of Work is received by The Company no later than Friday, Dec. 18th, 2015 at 12:00pm, development shall begin by Dec. 19th, 2015.
+If approval of this Scope of Work is received by The Company no later than Friday, Dec. 18th, 2015 at 12:00pm, development shall begin by Dec. 19th, 2015.# bitblotv02

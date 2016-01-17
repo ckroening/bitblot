@@ -1,0 +1,11 @@
+[
+  {
+  "name": "cat",
+  "src": "/assets/images/cat.jpg",
+  "likeAmount": "4"
+  },
+  {
+    "name": "city",
+    "src":"/assets/images/city.jpg"
+  }
+]

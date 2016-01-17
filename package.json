@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ckroening/bitblot.git"
+    "url": "git+https://github.com/ckroening/bitblotv02.git"
   },
   "author": "Charlotte Kroening",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ckroening/bitblot/issues"
+    "url": "https://github.com/ckroening/bitblotv02/issues"
   },
-  "homepage": "https://github.com/ckroening/bitblot#readme",
+  "homepage": "https://github.com/ckroening/bitblotv02#readme",
   "dependencies": {
     "angular": "^1.4.8",
     "body-parser": "^1.14.2",

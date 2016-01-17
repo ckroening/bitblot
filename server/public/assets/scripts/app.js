@@ -1,27 +1,30 @@
 var app = angular.module('bitblot', []);
 app.controller('BitBlotCtrl', function ($scope, $http) {
-  //TODO: already standing user responses need to be called with an $http GET call to a server/app.js GET receiver.
-  $scope.images = [{  // FIXME: download from server using GET
-    name: 'cat',
-    src: '/assets/images/cat.jpg',
-    likeAmount: '4'
-  }, {
-    name: 'city',
-    src: '/assets/images/city.jpg'
-  }];
+
+  $http({
+      method: 'GET',
+      url: '/imageData'
+    }).then(function (res) {
+      $scope.images = res.data;
+      $scope.currentImage = $scope.images[$scope.currentImageNum];
+      console.log($scope.images);
+    }, function (res) {
+      if (err) {
+        throw err;
+      }
+    });
 
   $scope.currentImageNum = 0;
-  $scope.currentImage = $scope.images[$scope.currentImageNum];
 
   $scope.next = function() {
     $scope.currentImageNum++;
-      console.log(JSON.stringify($scope.images, null, 2));
+    console.log(JSON.stringify($scope.images, null, 2));
     $scope.currentImage = $scope.images[$scope.currentImageNum];
     if($scope.currentImageNum === $scope.images.length) {
-
     }
     $scope.save();
   };
+
   $scope.prev = function() {
     $scope.currentImageNum--;
     console.log(JSON.stringify($scope.images, null, 2));
