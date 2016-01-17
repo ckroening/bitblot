@@ -7,9 +7,6 @@
 </head>
 
 <body ng-controller="BitBlotCtrl">
-<!--TODO: ng-show login view, results view -->
-<!--TODO: Make a GetResults Button! -->
-
 <!-- div for login view -->
 <div class="login" ng-show="true">
     <form ng-submit="submit()">
@@ -71,13 +68,13 @@
         <input type="radio" name="calm" ng-model="currentImage.calmAmount" value="4">
         <input type="radio" name="calm" ng-model="currentImage.calmAmount" value="5">
     </label><br/>
-    <label>
+    <label for="anger">
         Level of "Anger" that the image produced. <br />
-        <input type="radio" name="anger" ng-model="currentImage.angerAmount" value="1">
-        <input type="radio" name="anger" ng-model="currentImage.angerAmount" value="2">
-        <input type="radio" name="anger" ng-model="currentImage.angerAmount" value="3">
-        <input type="radio" name="anger" ng-model="currentImage.angerAmount" value="4">
-        <input type="radio" name="anger" ng-model="currentImage.angerAmount" value="5">
+        <input id="anger" type="radio" name="anger" ng-model="currentImage.angerAmount" value="1">
+        <input id="anger" type="radio" name="anger" ng-model="currentImage.angerAmount" value="2">
+        <input id="anger" type="radio" name="anger" ng-model="currentImage.angerAmount" value="3">
+        <input id="anger" type="radio" name="anger" ng-model="currentImage.angerAmount" value="4">
+        <input id="anger" type="radio" name="anger" ng-model="currentImage.angerAmount" value="5">
     </label><br/>
     <label>
         Level of "Curiosity" that the image produced. <br />
@@ -113,6 +110,7 @@
         </thead>
         <tbody>
         <tr ng-repeat="row in rowCollection">
+            <td>{{row.id}}</td>
             <td>{{row.liked}}</td>
             <td>{{row.happiness}}</td>
             <td>{{row.sadness}}</td>
@@ -144,14 +142,15 @@
         </thead>
         <tbody>
         <tr ng-repeat="row in rowCollection">
-            <td>{{row.liked}}</td>
-            <td>{{row.happiness}}</td>
-            <td>{{row.sadness}}</td>
-            <td>{{row.disgust}}</td>
-            <td>{{row.anxiety}}</td>
-            <td>{{row.calm}}</td>
-            <td>{{row.anger}}</td>
-            <td>{{row.curiosity}}</td>
+            <td>{{row.avgId}}</td>
+            <td>{{row.avgLiked}}</td>
+            <td>{{row.avgHappiness}}</td>
+            <td>{{row.avgSadness}}</td>
+            <td>{{row.avgDisgust}}</td>
+            <td>{{row.avgAnxiety}}</td>
+            <td>{{row.avgCalm}}</td>
+            <td>{{row.avgAnger}}</td>
+            <td>{{row.avgCuriosity}}</td>
         </tr>
         </tbody>
         </table st-table="rowCollection" class="table table-striped">

@@ -40,6 +40,6 @@ app.controller('BitBlotCtrl', function ($scope, $http) {
       console.log('Data saved. imageNum=' + imageNum); //TODO: Change this to a $http PUT call to the server/app.js router.PUT receiver.
     })
   };
-
+  //TODO: communicate with server & db regarding login route. (Also set this up on index.html)
   //TODO: Get results function and $http GET call to the server/app.js router.GET receiver.
 });
