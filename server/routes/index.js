@@ -24,8 +24,9 @@ router.get('/imageData', function(req, res) {
 
 router.put('/imageData/:id', function(req, res) {
   var id = req.params.id;
-  res.send('helloyo');
+  res.send('Sent data for image ' + id + ' to database.');
   console.log('sending one image data to db: ' + id);
+  console.log(req.body);
 });
 
 router.get('/results', function(req, res) { //this handler is looking through ALL users data (rather than 1).
