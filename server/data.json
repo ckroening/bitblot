@@ -12,6 +12,10 @@
     "src": "/assets/images/cat.jpg"
   },
   {
+    "name": "city",
+    "src": "/assets/images/city.jpg"
+  },
+  {
     "name": "coffee",
     "src":"/assets/images/coffee.jpg"
   },

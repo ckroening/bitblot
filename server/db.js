@@ -14,7 +14,72 @@ var imageSchema = mongoose.Schema({
 
 var Image = mongoose.model('Image', imageSchema);
 
-var loadInitialData = function() {
+var userResponseSchema = mongoose.Schema({
+  imageId: mongoose.Schema.Types.ObjectId,
+  likeAmount: Number,
+  happinessAmount: Number,
+  sadnessAmount: Number,
+  disgustAmount: Number,
+  anxietyAmount: Number,
+  calmAmount: Number,
+  angerAmount: Number,
+  curiosityAmount: Number
+});
+
+var UserResponse = mongoose.model('userResponse', userResponseSchema);
+
+var putResponse = function(imageName, userResponses) {
+  var criteria = {name: imageName};
+  Image.findOne(criteria, function(err, image) {
+    if (err) {
+      throw err;
+    }
+
+    if (!image) {
+      console.log(imageName + ' not found.');
+      return;
+    }
+
+    var criteria = {imageId: mongoose.Types.ObjectId(image._id)}; //this is corresponding to the imageId property of the userResponseSchema (we could have also used the property, "name" instead of "imageId")
+    console.log(image);
+    var update = {};
+
+    if (userResponses.likeAmount) {
+      update.likeAmount = userResponses.likeAmount;
+    }
+    if (userResponses.happinessAmount) {
+      update.happinessAmount = userResponses.happinessAmount;
+    }
+    if (userResponses.sadnessAmount) {
+      update.sadnessAmount = userResponses.sadnessAmount;
+    }
+    if (userResponses.disgustAmount) {
+      update.disgustAmount = userResponses.disgustAmount;
+    }
+    if (userResponses.anxietyAmount) {
+      update.anxietyAmount = userResponses.anxietyAmount;
+    }
+    if (userResponses.calmAmount) {
+      update.calmAmount = userResponses.calmAmount;
+    }
+    if (userResponses.angerAmount) {
+      update.angerAmount = userResponses.angerAmount;
+    }
+    if (userResponses.curiosityAmount) {
+      update.curiosityAmount = userResponses.curiosityAmount;
+    }
+
+    var options = {upsert: true};
+    UserResponse.findOneAndUpdate(criteria, update, options, function (err, userResponse) {
+      if (err) {
+        throw err;
+      }
+      console.log('Data saved.');
+    });
+  });
+};
+
+var loadInitialData = function() { //this is a bootstrap to grab data immediately for when the server starts.
   var data = require('./data.json');
   for (var i = 0; i < data.length; i++) {
     var criteria = {name: data[i].name};
@@ -24,7 +89,7 @@ var loadInitialData = function() {
       if (err) {
         throw err;
       }
-      if (image) {
+      if (image) { //these two logs are telling us whether or not the image has been updated or created from scratch. (for use later)
         //console.log('Updated image: ' + data[i].name);
       } else {
         //console.log('Created image: ' + data[i].name);
@@ -34,6 +99,10 @@ var loadInitialData = function() {
 };
 
 loadInitialData();
+
+
+
+
 
 
 /*
@@ -48,15 +117,22 @@ var createUser = function() {
 
 };
 
-var saveData = function() {
-
-};
-
 var calculateResults = function(getData) {
 
 };
 
-var getUserData = function(user){
+var getUserData = function(username) { //get image data for a specific user
+  var user = getUser(username);
 
+  return [{
+    name: 'cat',            // comes from image entity
+    src: '/images/cat.jpg', // comes from image entity
+    likeLevel: 3,           // comes from userResponse entity
+    happinessLevel: 4       // comes from userResponse entity
+  }];
 };
 */
+
+module.exports = {
+  putResponse: putResponse
+};

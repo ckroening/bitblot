@@ -1,6 +1,7 @@
 var app = angular.module('bitblot', []);
 app.controller('BitBlotCtrl', function ($scope, $http) {
 
+  //"Requesters": ('send 'envelope' with stuff in it from index.html', labeled with url, method, body)
   $http({
       method: 'GET',
       url: '/imageData'
@@ -31,15 +32,16 @@ app.controller('BitBlotCtrl', function ($scope, $http) {
   };
 
   $scope.save = function() {
-    var imageNum = $scope.currentImageNum;
+    var imageName = $scope.currentImage.name;
     $http({
       method: 'PUT',
-      url: '/imageData/' + $scope.currentImageNum, //this is the same as "/imageData/:id'," in index.js PUT route.
-      data: $scope.images[$scope.currentImageNum]
+      url: '/imageData/' + imageName, //this is the same as "/imageData/:imageName'," in index.js PUT route.
+      data: $scope.currentImage //userResponse data is contained here (including ex. curiosityAmount) imageResponse.curiosityAmount
     }).then(function() {
-      console.log('Data saved. imageNum=' + imageNum); //TODO: Change this to a $http PUT call to the server/app.js router.PUT receiver.
+      console.log('Data saved. imageName = ' + imageName);
     })
   };
+
   //TODO: communicate with server & db regarding login route. (Also set this up on index.html)
   //TODO: Get results function and $http GET call to the server/app.js router.GET receiver.
 });
