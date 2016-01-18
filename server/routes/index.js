@@ -6,7 +6,7 @@ var path = require('path'); //include path dependency (path will help serve file
 var db = require('../db');
 
 //"Receivers":
-router.get('/',function(req,res,next){ //next is how express handles middleware. User hits / and handler sends back main holding page (for all stuff): index.html.
+router.get('/',function(req,res,next){ //next is how express handles middleware. User hits / and handler sends back main holding page (for all stuff): index2.html.
   res.sendFile(path.join(__dirname,'../public/assets/views/index.html')); //static files are served via server/public folder.
 });
 
