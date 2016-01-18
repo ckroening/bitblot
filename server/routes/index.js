@@ -17,8 +17,9 @@ router.post('/login', function(req, res) {
 });
 
 router.get('/imageData', function(req, res) {
-  console.log('got all image data');
-  res.sendFile(path.join(__dirname,'../data.json'));//'../data.json'
+  db.getImageData(function(images) {
+    res.send(images);
+  });
 });
 
 router.put('/imageData/:imageName', function(req, res) { // "envelope" received. Contains: url, body, method

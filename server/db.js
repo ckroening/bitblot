@@ -121,6 +121,42 @@ var calculateResults = function(getData) {
 
 };
 
+*/
+var getImageData = function(callback) {
+  Image.find(function(err, images){
+    if (err) {
+      throw err;
+    }
+    UserResponse.find(function(err, userResponses){
+      if (err) {
+        throw err;
+      }
+      var combined = [];  //combine images with responses.
+      for (var j = 0; j < images.length; j++) {
+        var combinedItem = {
+          name: images[j].name,
+          src: images[j].src
+        };
+        for (var i = 0; i < userResponses.length; i++) {
+          if (userResponses[i].imageId.toString() == images[j]._id.toString()) {
+            combinedItem.likeAmount = userResponses[i].likeAmount;
+            combinedItem.happinessAmount = userResponses[i].happinessAmount;
+            combinedItem.sadnessAmount = userResponses[i].sadnessAmount;
+            combinedItem.disgustAmount = userResponses[i].disgustAmount;
+            combinedItem.anxietyAmount = userResponses[i].anxietyAmount;
+            combinedItem.calmAmount = userResponses[i].calmAmount;
+            combinedItem.angerAmount = userResponses[i].angerAmount;
+            combinedItem.curiosityAmount = userResponses[i].curiosityAmount;
+          }
+        }
+        combined.push(combinedItem);
+      }
+      callback(combined);
+    })
+  })
+};
+
+/*
 var getUserData = function(username) { //get image data for a specific user
   var user = getUser(username);
 
@@ -134,5 +170,6 @@ var getUserData = function(username) { //get image data for a specific user
 */
 
 module.exports = {
-  putResponse: putResponse
+  putResponse: putResponse,
+  getImageData: getImageData
 };
