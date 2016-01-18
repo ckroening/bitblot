@@ -1,6 +1,15 @@
 var app = angular.module('bitblot', []);
 app.controller('BitBlotCtrl', function ($scope, $http) {
 
+  $scope.loggedIn = false;
+
+  $scope.login = function() {
+    $scope.loggedIn = true;
+  };
+
+  $scope.showingResults = false;
+
+
   //"Requesters": ('send 'envelope' with stuff in it from index2.html', labeled with url, method, body)
   $http({
       method: 'GET',
@@ -81,5 +90,6 @@ app.controller('BitBlotCtrl', function ($scope, $http) {
  $scope.showResults = function() {
     $scope.save();
     $scope.updateAverages();
+    $scope.showingResults = true;
   };
 });
