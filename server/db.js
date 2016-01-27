@@ -1,3 +1,5 @@
+//schemas here are all contained in the same file and 'exported' or saved as variables for immediate use in the functions contained here.
+//db.js is what interacts directly with database and between database and server. It is the database-server interface.
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/bitblot');
 
