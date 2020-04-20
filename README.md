@@ -1,8 +1,8 @@
-#Bit Blot
+# Bit Blot
 * Client: Self
 * Dec. 18, 2015 | Version 02
 
-###Document Objectives
+### Document Objectives
 The purpose of this document is to provide detailed documentation that clearly defines the work that Prime Student, Charlotte Kroening, will perform and the deliverables you will receive within the scope of this project. By accepting this document you acknowledge your understanding and agreement to this scope of work. Any requirement which falls outside the specifications in this document will be considered "Out of Scope" and may require reprioritization or removal of other features to implement. 
 
 This document takes precedence over any other documentation provided regarding scope of work.
@@ -13,35 +13,35 @@ Bit Blot is a project built to harness and visually demonstrate the unique corre
 ##Features
 The features of this application will be balanced across two views: a basic landing page and a generated results page.
 
-###Main Landing View
+### Main Landing View
 This view includes:
 *Image Display
 *Rating System
 *Generate Results Button
 
-#####Image Display:
+##### Image Display:
 Images will be displayed in a sliding carousel-style setup utilizing Angular UI. The number of images will be limited to 20 images per session, but the user can opt to complete the submission process at any point with any amount of rated image submissions less than the total limit allowed.
 
-#####Rating System:
+##### Rating System:
 The user will have the opportunity to rate each image on a scale of 1 to 5, 5 being most “true” for the user and 1 being most “false” for the user. This scale will be applied to the following categories of evaluation:
 
-*Amount that the user generally “Liked” the image.
-*Level of Happiness that the image produced for the user.
-*Level of Sadness that the image produced for the user.
-*Level of Disgust that the image produced for the user.
-*Level of Anxiety or Stress that the image produced for the user.
-*Level of Calm or Relief that the image produced for the user.
-*Level of Anger that the image produced for the user.
+* Amount that the user generally “Liked” the image.
+* Level of Happiness that the image produced for the user.
+* Level of Sadness that the image produced for the user.
+* Level of Disgust that the image produced for the user.
+* Level of Anxiety or Stress that the image produced for the user.
+* Level of Calm or Relief that the image produced for the user.
+* Level of Anger that the image produced for the user.
 
-####Mode of Submission:
+#### Mode of Submission:
 The landing page view will contain a method for submitting data provided by the user. This method will be in the form of a button resting below the list of rating information provided to the user. Ratings will be submitted via radio buttons in an html form.
 
-####Generated Results View
+#### Generated Results View
 This view includes:
 *Visual Results Display
 *Linkage to Main Landing View
 
-###Visual Results Display:
+### Visual Results Display:
 This display component will utilize vector graphics technology to provide a visual representation of data submitted by the user. This representation will also display correlations between related data and will attempt to offer the user an interactive visual map of her or her responses.
 
 
@@ -49,12 +49,12 @@ This is an example of how the generated results view is intended to appear.
 Source
 
 
-###Display Algorithm & Interface:
-*Correlations, or strengths of connections between responses, will be determined by 		grouping together similarly rated input with the use of a correlate() function. This function 	will observe user inputs and match these inputs based on their ratings, for example:
-*If a user selected a rating of 5 for “level of happiness” produced by certain images and the user also provided a similar rating of 5 for how much the user “liked” these same images, then a bold link will be created between these two positively correlated response categories, and few other connections will be made outside of that link. 
-*A user may also generate results that provide for a strong negative correlation between “disliking” (with a rating of 1) images that also provide a strong level of “disgust” (rating of 5) for the user, for example. This correlation will also be demonstrated with a linking display in the visual results display page, but since the correlation values are opposite, this display will be rendered in a different format, such as by use of a dashed line rather than a bold link.
+### Display Algorithm & Interface:
+* Correlations, or strengths of connections between responses, will be determined by 		grouping together similarly rated input with the use of a correlate() function. This function 	will observe user inputs and match these inputs based on their ratings, for example:
+* If a user selected a rating of 5 for “level of happiness” produced by certain images and the user also provided a similar rating of 5 for how much the user “liked” these same images, then a bold link will be created between these two positively correlated response categories, and few other connections will be made outside of that link. 
+* A user may also generate results that provide for a strong negative correlation between “disliking” (with a rating of 1) images that also provide a strong level of “disgust” (rating of 5) for the user, for example. This correlation will also be demonstrated with a linking display in the visual results display page, but since the correlation values are opposite, this display will be rendered in a different format, such as by use of a dashed line rather than a bold link.
 
-*In summary, the degree of correlation between response categories will be based on 		evaluations and comparisons of response values. This correlation degree will then be 		displayed with a different method of expression (bold, solid, or dashed line) per degree:
+* In summary, the degree of correlation between response categories will be based on 		evaluations and comparisons of response values. This correlation degree will then be 		displayed with a different method of expression (bold, solid, or dashed line) per degree:
 
 -Strong (positive) Correlation: bold line - both evaluated categories have positively correlated values (ex. “liked” = 5 and “happiness level” = 5) 
 -Moderate Correlation: solid, not emphasized line - both evaluated categories have moderately correlated values (ex. “liked” = 3 and “happiness level” = 4)
@@ -62,12 +62,12 @@ Source
 
 *All user responses will then be rendered on the visual results display page using the technologies offered by D3, Data Driven Documents. 
 
-###Linkage to Main Landing View:
+### Linkage to Main Landing View:
 The generated results view will aim to maintain a slim and concise effect and will include only
 the generated results image and a link back to the main page should the user wish to restart the
 process. Upon clicking on this linkage, the system will reset and allow the user to begin afresh on the main landing view page.
 
-####Project Milestones
+#### Project Milestones
 If approval of this Scope of Work is received by The Company no later than Friday, December 18th, 2015 at 12:00pm, development shall become effective on December 19th, 2015, and the following deadlines will become effective. Changes, if necessary, will be reported by Charlotte Kroening via email to Joseph or Antoinette. The Client acknowledged and agrees that The Client's failure to adhere to deadlines will impact The Company's deadlines and estimated cost and, in such instances, The Company will not be responsible for missed deadlines, including final delivery/deployment, and increased costs and expenses.
 
 Milestone
@@ -151,7 +151,7 @@ Stand Up Meeting
 1/15/16
 9:00am
 
-###Assumptions
+### Assumptions
 While completing this estimate the following assumptions were made.
 Project is basic design only: a mobile version will not be created at this time and basic functionality is the project’s main goal.
 There will not be user management included in this project. Data will be temporarily stored, but a login and registration option will not yet be added.
@@ -160,8 +160,7 @@ User cannot make permanent changes to application.
 This project will be developed in English only.
 This project is intended as a basic starting point for further development as mentioned in the following Stretch Goals section.
 
-
-###Stretch Goals
+### Stretch Goals
 This project is intended to be a functional base for further development, time permitting.
 Include a user registration and login option.
 Include additional rating fields and additional correlation mapping in results page. (see last bullet)
